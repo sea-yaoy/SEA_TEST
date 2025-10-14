@@ -8,7 +8,7 @@ import { cleanParams, commonRequestData } from "utils/common"
 import { billingInfoService } from "services/billingInfo"
 import { IGetBilling, IBillingData } from "interfaces/request"
 import SelectInput from "components/common/SelectInput"
-import { EBillingStatus, ScreenName } from "constants/enum"
+import { EBillingStatus } from "constants/enum"
 import { CSV_STATUS } from "constants/app"
 
 const DEFAULT_CONDITION = {
@@ -32,7 +32,7 @@ const BillingInfoPage = () => {
   const getBillingInfo = async (page?: number, paramsSearch?: IGetBilling) => {
     const res = await billingInfoService.getBillingInfo(
       commonRequestData(
-        ScreenName.invoiceInfo,
+        "",
         cleanParams({
           ...paramsSearch,
           p: page || 1,

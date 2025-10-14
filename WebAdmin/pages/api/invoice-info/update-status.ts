@@ -7,7 +7,7 @@ import { checkValidRequest } from "utils/common"
 
 const CONFIG = {
   method: "POST",
-  screen: ScreenName.invoiceInfo,
+  screen: ScreenName.commissionCsv,
 }
 
 export default async function handler(

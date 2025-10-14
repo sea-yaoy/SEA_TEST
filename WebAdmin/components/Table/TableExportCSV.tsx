@@ -21,7 +21,6 @@ import { formatNumber } from "utils/number"
 import { IGetDetailCSV, IResponseCsv } from "interfaces/request"
 import { exportCSV } from "services/exportCSV"
 import { cleanParams, commonRequestData } from "utils/common"
-import { ScreenName } from "constants/enum"
 
 interface Props {
   selectItem: string[]
@@ -54,10 +53,11 @@ const TableExportCSV = ({
     page?: number | undefined,
     item?: IResponseCsv,
   ) => {
-    const no = item?.AccountNo?.concat(item?.PaymentDueDate ?? "") ?? ""
+    const no =
+      item?.AccountNo?.concat(item?.PaymentDueDate ?? "") ?? ""
     const res = await exportCSV.getRewardPaymentDetail(
       commonRequestData(
-        ScreenName.commissionCsv,
+        "",
         cleanParams({
           p: page ?? 1,
           no,

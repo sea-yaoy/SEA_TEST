@@ -13,7 +13,6 @@ import { IGetCommissionCsv, IResponseCsv, IUpdateCSV } from "interfaces/request"
 import { formatDate } from "utils/date"
 import { formatNumber } from "utils/number"
 import { CSV_COLUMN } from "constants/app"
-import { ScreenName } from "constants/enum"
 
 const DEFAULT_DATE = {
   year: "",
@@ -71,7 +70,7 @@ const ExportCSVPage = () => {
 
     const res = await exportCSV.getRewardPayment(
       commonRequestData(
-        ScreenName.commissionCsv,
+        "",
         cleanParams({
           p: page ?? 1,
           year: !!+year ? year : undefined,
@@ -128,7 +127,7 @@ const ExportCSVPage = () => {
   }
 
   const generateID = (type: boolean) => {
-    return commonRequestData(ScreenName.commissionCsv, {
+    return commonRequestData("", {
       noArr: data.reduce((acc: string[], cur, i) => {
         if (selectItem.includes(i.toString())) {
           return [

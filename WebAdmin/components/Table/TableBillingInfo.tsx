@@ -79,7 +79,7 @@ const TableBillingInfo = ({
   ) => {
     const res = await billingInfoService.getBillingDetail(
       commonRequestData(
-        ScreenName.invoiceInfo,
+        "",
         cleanParams({
           no: no,
           p: page || 1,
@@ -120,33 +120,22 @@ const TableBillingInfo = ({
   // }
 
   const onDownloadCsv = async () => {
-	commonRequestData(
-      ScreenName.invoiceInfo,
-      cleanParams({
-        no: itemChoose.BillingNo,
-        status: (+!+itemChoose.PaymentStatus).toString(),
-      }),
-    )
-    const csvRes = await exportCSV.getInvoiceDetailInfoCsv(
-      commonRequestData(ScreenName.invoiceInfo, {
-        itemId: itemChoose.BillingNo,
-      }) as { itemId: string },
-    )
+    const csvRes = await exportCSV.getInvoiceDetailInfoCsv({
+      itemId: itemChoose.BillingNo,
+    })
 
     if (csvRes?.tableData) setCsvData(csvRes.tableData)
     // Update PaymentStatus of record
-    const statusRes = await exportCSV.updateBillingStatus(
-      commonRequestData(ScreenName.invoiceInfo, {
-        billingNo: itemChoose.BillingNo,
-      }) as { billingNo: string },
-    )
+    const statusRes = await exportCSV.updateBillingStatus({
+      billingNo: itemChoose.BillingNo,
+    })
 
     if (statusRes.status === "success") {
       // Update status of record in table
       updateStatus(itemChoose.BillingNo, "1")
 
       // Download CSV
-	  setCsvName(`${formatDate(new Date(), "YYYY-MM-DD")}請求情報検CSV`)
+      setCsvName(`${formatDate(new Date(), "YYYY-MM-DD")}請求情報検CSV`)
       const timmer = setTimeout(() => {
         clearTimeout(timmer)
         csvLink?.current?.link?.click()

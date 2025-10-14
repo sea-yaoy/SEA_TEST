@@ -70,17 +70,14 @@ interface IUpdatePaypeeInfo extends ICommonRequest {
 interface IDeletePaypeeInfo extends ICommonRequest {
   no: string
 }
-interface IReqGetAllCommissionRate extends ICommonRequest {
-  mail?: string
-}
-
-interface IReqGetAll extends ICommonRequest {
+interface IReqGetAll {
   AccountNo: string
 }
 interface IReqUpdate extends IReqGetAll {
   CommissionRate: string
 }
 interface IResGetAll extends IReqUpdate {
+  CommissionRate: string
   Name: string
 }
 interface IGetBilling {
@@ -162,5 +159,4 @@ export type {
   IUpdateAccountItemInfo,
   IUpdateCSV,
   IGetDetailCSV,
-  IReqGetAllCommissionRate,
 }

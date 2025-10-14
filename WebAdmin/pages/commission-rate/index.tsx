@@ -5,9 +5,6 @@ import { SearchIcon } from "ui-lib/Icons"
 import { commissionService } from "services/commissionRate"
 import TableCommissionRate from "components/Table/TableCommissionRate"
 import { ICommissionRate } from "interfaces/models"
-import { commonRequestData } from "utils/common"
-import { ScreenName } from "constants/enum"
-import { IReqGetAllCommissionRate, IReqUpdate } from "interfaces/request"
 
 const MaintainingFeePage = () => {
   const [searchMail, setSearchMail] = useState<string>()
@@ -24,11 +21,9 @@ const MaintainingFeePage = () => {
 
   // Get list commission rate
   const getCommissionRate = async () => {
-    const res = await commissionService.getCommissionFee(
-      commonRequestData(ScreenName.commissionRate, {
-        mail: searchMail as string,
-      }) as IReqGetAllCommissionRate,
-    )
+    const res = await commissionService.getCommissionFee({
+      mail: searchMail,
+    })
 
     if (res?.tableData) setCommissionRateList(res.tableData ?? [])
   }
@@ -42,12 +37,10 @@ const MaintainingFeePage = () => {
     const { AccountNo, CommissionRate } = rowSelect
 
     if (!AccountNo || !CommissionRate) return
-    const res = await commissionService.updateCommissionFee(
-      commonRequestData(ScreenName.commissionRate, {
-        AccountNo,
-        CommissionRate,
-      }) as IReqUpdate,
-    )
+    const res = await commissionService.updateCommissionFee({
+      AccountNo,
+      CommissionRate,
+    })
     if (res.status === "success") {
       // Update list data in table
       const newData = commissionRateList.map((i) =>

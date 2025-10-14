@@ -88,12 +88,12 @@ export const commonRequestData = (
   screenId: string,
   params: { [key: string]: number | string | string[] },
 ) => {
-  const _time = formatDate(new Date(), YYYYMMDDHHmmss)
+  // const _time = formatDate(new Date(), YYYYMMDDHHmmss)
 
   return {
     ...params,
-    time: _time,
-    hash: convertToHEx(screenId, _time) as string,
+    // time: _time,
+    // hash: convertToHEx(screenId, _time) as string,
   } as unknown
 }
 
@@ -109,6 +109,7 @@ export const checkValidRequest = (
   // }
 
   const method = req?.method?.toUpperCase()
+  // const params = method === "GET" ? req.query : req.body
 
   if (method !== config.method) {
     return {
@@ -117,17 +118,16 @@ export const checkValidRequest = (
     }
   }
 
-  const params = method === "GET" ? req.query : req.body
-  if (
-    !params.time ||
-    !params.hash ||
-    params.hash !== convertToHEx(config.screen ?? "", params.time as string)
-  ) {
-    return {
-      status: 400,
-      message: "Bad Request",
-    }
-  }
+  // if (
+  //   !params.time ||
+  //   !params.hash ||
+  //   params.hash !== convertToHEx(config.screen ?? "", params.time as string)
+  // ) {
+  //   return {
+  //     status: 400,
+  //     message: "Bad Request",
+  //   }
+  // }
 
   return {
     status: 200,

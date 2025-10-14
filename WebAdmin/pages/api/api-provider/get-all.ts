@@ -32,10 +32,8 @@ export default async function handler(
       (SELECT COUNT(AppNo) AS TotalRow
       FROM api_provider WHERE PicName LIKE ? ) AS count 
       ON true
-    WHERE PicName LIKE ?
-    -- 20250814_SEA_姚_START_打鍵テスト_不具合一覧対応 No.15
-    ORDER BY api_provider.Result, api_provider.ApplyDate ASC
-    -- 20250814_SEA_姚_END_打鍵テスト_不具合一覧対応 No.15
+    WHERE PicName LIKE ? 
+    ORDER BY api_provider.Result ASC
     LIMIT ? OFFSET ?`,
       [
         name,

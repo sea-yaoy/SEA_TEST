@@ -1,8 +1,8 @@
 import api from "./api"
-import { IReqGetAllCommissionRate, IReqUpdate } from "interfaces/request"
+import { IReqUpdate } from "interfaces/request"
 
 export const commissionService = {
-  async getCommissionFee(params: IReqGetAllCommissionRate) {
+  async getCommissionFee(params: { mail?: string }) {
     return await api.get("api/commission-rate/get-all", { params })
   },
   async updateCommissionFee(params: IReqUpdate) {
