@@ -1,0 +1,32 @@
+:root {
+  // Common
+  --main-color: #ff5600;
+  --primary-color: #ffffff;
+  --c01-color: #d52626;
+  --c02-color: #d038b7;
+  --c03-color: #333333;
+
+  // Box shadow group
+  --box-shadow-color: #cbcbcb;
+  --light-box-shadow: -2px -2px 5px #fff;
+  --base-box-shadow: 3px 3px 10px var(--box-shadow-color);
+  --box-shadow: var(--light-box-shadow), var(--base-box-shadow);
+  --box-shadow-inset: inset var(--light-box-shadow),
+    inset var(--base-box-shadow);
+  --box-shadow-input: inset 0.3px 3px 3px #d5d5d5, inset 0.3px -1px 3px #fff;
+
+  // Background color
+  --main-bg-color: #f4f4f4;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #888888;
+
+  // Border color
+  --cell-border-color: #89898b;
+  --primary-border-color: #d4d4d4;
+  --second-border-color: #666666;
+
+  // Text color
+  --primary-text-color: #484848;
+  --secondary-text-color: #89898b;
+  --danger-text-color: #ff0000;
+}

@@ -1,0 +1,71 @@
+/* NotoSansJP for text */
+@font-face {
+  font-family: "NotoSansJP";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Noto Sans CJK JP Regular"), local("NotoSansCJKjp-Regular"),
+    local("NotoSansJP-Regular"),
+    url("../fonts/NotoSansCJKjp-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "NotoSansJP";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Noto Sans CJK JP Medium"), local("NotoSansCJKjp-Medium"),
+    local("NotoSansJP-Medium"),
+    url("../fonts/NotoSansCJKjp-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "NotoSansJP";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Noto Sans CJK JP Bold"), local("NotoSansCJKjp-Bold"),
+    local("NotoSansJP-Bold"),
+    url("../fonts/NotoSansCJKjp-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontPw";
+  font-display: swap;
+  src: url("../fonts/FontPw.woff2") format("woff2");
+}
+/* Open Sans for number */
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+30-39, U+002B-002F, U+0025, U+003A, U+0028-0029; // 0-9 | +,-./ | % | : | ()
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("../fonts/OpenSans-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+30-39, U+002B-002F, U+0025, U+003A;
+  src: local("Open Sans Medium"), local("OpenSans-Medium"),
+    url("../fonts/OpenSans-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 600; // Semi-bold
+  font-display: swap;
+  unicode-range: U+30-39, U+002B-002F, U+0025, U+003A;
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"),
+    url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 700; // Bold
+  font-display: swap;
+  unicode-range: U+30-39, U+002B-002F, U+0025, U+003A;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url("../fonts/OpenSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "OpenSansFull";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"),
+    url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+}

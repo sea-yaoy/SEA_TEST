@@ -1,0 +1,27 @@
+{
+  "tableData": [
+    {
+      "AppNo": "abcde1d2345",
+      "CompanyName": "てすとひろせ",
+      "PicName": "廣瀬 俊之",
+      "Result": "0",
+      "DecisionComment": ""
+    },
+    {
+      "AppNo": "abcdes12345",
+      "CompanyName": "てすとひろせ",
+      "PicName": "廣瀬 俊之",
+      "Result": "1",
+      "DecisionComment": "問題なし"
+    },
+    {
+      "AppNo": "abcde12345",
+      "CompanyName": "てすとひろせ",
+      "PicName": "廣瀬 俊之",
+      "Result": "2",
+      "DecisionComment": "問題なし"
+    }
+  ],
+  "currentPage": 1,
+  "totalPage": 1
+}

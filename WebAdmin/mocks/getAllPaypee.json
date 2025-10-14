@@ -1,0 +1,24 @@
+{
+  "tableData": [
+    {
+      "AccountNo": "2000000001",
+      "CompanyName": "会社名",
+      "Name": "Parthenia Howe",
+      "PayeeCode": "2000000001"
+    },
+    {
+      "AccountNo": "2000000002",
+      "CompanyName": "会社名",
+      "Name": "Adrianna Pfannerstill",
+      "PayeeCode": "2000000002"
+    },
+    {
+      "AccountNo": "2000000003",
+      "CompanyName": "会社名",
+      "Name": "Jeanette Pfannerstill",
+      "PayeeCode": ""
+    }
+  ],
+  "currentPage": 1,
+  "totalPage": 1
+}
